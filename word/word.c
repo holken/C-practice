@@ -10,7 +10,7 @@ int main(void)
 	unsigned int size = 100;
 	int i = 0;
 	char *word = malloc(size);
-	char c;
+	int c;
 	while ((c = getchar()) != EOF) {
 		if ((c > 'z' || c < 'a') && (c < 'A' || c > 'Z')){
 			if (start_max == -1){
@@ -23,7 +23,6 @@ int main(void)
 			start = i;
 		} else {
 			if (i == size) {
-				printf("resize");
 				size *= 2;
 				word = realloc(word, size);
 			}
